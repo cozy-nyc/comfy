@@ -45,3 +45,7 @@ This is the old college-era style, used as the starting point for the cozy NYC m
 - In both modes, the "Background" row is labeled with the other mode's color. The frame backgrounds show the real intent (dark = cozy black, light = cozy white).
 - Dark mode has no alert color and light mode has no action color. Tokens borrow them from the other mode for now.
 - Effects, shadows, inputs, buttons, navigation and component pages are still empty.
+
+---
+
+> **Moved:** the design system now lives in the cozy monorepo at [`cozy-nyc/cozy-nyc` → `packages/comfy`](https://github.com/cozy-nyc/cozy-nyc/tree/claude/cozy-nyc-events-map-eteado/packages/comfy) (history included). Make changes there. This repo can be archived once that branch merges.
