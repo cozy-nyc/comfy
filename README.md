@@ -48,4 +48,4 @@ This is the old college-era style, used as the starting point for the cozy NYC m
 
 ---
 
-> **Moved:** the design system now lives in the cozy monorepo at [`cozy-nyc/cozy-nyc` → `packages/comfy`](https://github.com/cozy-nyc/cozy-nyc/tree/claude/cozy-nyc-events-map-eteado/packages/comfy) (history included). Make changes there. This repo can be archived once that branch merges.
+> **Moved:** the design system now lives in the cozy monorepo at [`cozy-nyc/cozy-nyc` → `packages/comfy`](https://github.com/cozy-nyc/cozy-nyc/tree/rebirth/packages/comfy) (history included). Make changes there. This repo can be archived once `rebirth` reaches public beta.
