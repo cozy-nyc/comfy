@@ -64,3 +64,7 @@ Fonts load from Google Fonts. The URL is at the top of `css/cozy.css`.
 - In both modes, the "Background" row is labeled with the other mode's color. The frame backgrounds show the real intent (dark = cozy black, light = cozy white).
 - Dark mode has no alert color and light mode has no action color. Tokens borrow them from the other mode for now.
 - Effects, shadows, inputs, buttons, navigation and component pages are still empty.
+
+## License
+
+MIT. The map style draws OpenStreetMap data (ODbL) via OpenFreeMap and MTA open data; those have their own terms.
