@@ -6,7 +6,7 @@ The cozy design system: colors, type and the cube logo, as code.
 - File: [cozy design system](https://www.figma.com/design/8pN42b4cUOYKJnqcZ8D41o/cozy-design-system) (page "Design Guide")
 - Team folder: [cozy on Figma](https://www.figma.com/files/team/1392311666896102790/folder/46243737)
 
-This is the old college-era style, used as the starting point for the cozy NYC map. It lives in the cozy monorepo as the `@cozy/comfy` workspace package (it used to be the separate `cozy-nyc/comfy` repo). Change it in Figma first, then update the files here.
+This is the old college-era style, now the starting point for the [cozy NYC map](https://github.com/cozy-nyc/cozy-nyc), which depends on this repo as `@cozy/comfy`. It's its own repo so other projects can use it. Change it in Figma first, then update the files here.
 
 ## What's here
 
@@ -19,6 +19,12 @@ This is the old college-era style, used as the starting point for the cozy NYC m
 | `map/style.ts` | `cozyMapStyle({ mask, subwayLines, subwayStations })`: the flat "subway map" MapLibre style; map colors in `tokens.color.map`, MTA line colors in `MTA_COLORS` |
 
 ## Using it
+
+Until it's on npm, install straight from GitHub:
+
+```sh
+pnpm add github:cozy-nyc/comfy
+```
 
 ```ts
 import "@cozy/comfy/css/cozy.css";              // CSS variables + type classes
@@ -58,7 +64,3 @@ Fonts load from Google Fonts. The URL is at the top of `css/cozy.css`.
 - In both modes, the "Background" row is labeled with the other mode's color. The frame backgrounds show the real intent (dark = cozy black, light = cozy white).
 - Dark mode has no alert color and light mode has no action color. Tokens borrow them from the other mode for now.
 - Effects, shadows, inputs, buttons, navigation and component pages are still empty.
-
----
-
-> **Moved:** the design system now lives in the cozy monorepo at [`cozy-nyc/cozy-nyc` → `packages/comfy`](https://github.com/cozy-nyc/cozy-nyc/tree/rebirth/packages/comfy) (history included). Make changes there. This repo can be archived once `rebirth` reaches public beta.

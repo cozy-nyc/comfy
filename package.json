@@ -1,7 +1,7 @@
 {
   "name": "@cozy/comfy",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "description": "cozy design system: tokens, CSS theme and logos",
   "type": "module",
   "exports": {
@@ -19,5 +19,18 @@
   "devDependencies": {
     "typescript": "^5.7.0",
     "@types/geojson": "^7946.0.16"
-  }
+  },
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cozy-nyc/comfy.git"
+  },
+  "files": [
+    "assets",
+    "css",
+    "map",
+    "tokens",
+    "README.md",
+    "LICENSE"
+  ]
 }
