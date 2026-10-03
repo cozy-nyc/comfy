@@ -159,18 +159,18 @@
 }
 
 :root, [data-theme="dark"] {
-  --background-base: var(--color-neutral-10);
-  --background-layer1: var(--color-neutral-15);
-  --background-layer2: var(--color-neutral-20);
-  --background-layer3: var(--color-neutral-25);
+  --background-base: var(--color-neutral-20);
+  --background-layer1: var(--color-neutral-25);
+  --background-layer2: var(--color-neutral-30);
+  --background-layer3: var(--color-neutral-35);
   --text-primary: var(--color-neutral-98);
   --text-secondary: var(--color-neutral-80);
   --text-muted: var(--color-neutral-60);
   --text-inverse: var(--color-neutral-10);
   --text-link: var(--color-hot-70);
   --text-accent: var(--color-pink-70);
-  --border-subtle: var(--color-neutral-25);
-  --border-strong: var(--color-neutral-40);
+  --border-subtle: var(--color-neutral-30);
+  --border-strong: var(--color-neutral-50);
   --border-focus: var(--color-pink-70);
   --status-success-main: var(--color-ice-70);
   --status-success-light: var(--color-ice-20);
@@ -199,9 +199,9 @@
   --interactive-secondary-disabled: var(--color-neutral-30);
   --interactive-secondary-text: var(--color-neutral-99);
   --interactive-tertiary-active: var(--color-neutral-80);
-  --interactive-tertiary-hover: var(--color-neutral-25);
-  --interactive-tertiary-inactive: var(--color-neutral-20);
-  --interactive-tertiary-disabled: var(--color-neutral-30);
+  --interactive-tertiary-hover: var(--color-neutral-35);
+  --interactive-tertiary-inactive: var(--color-neutral-30);
+  --interactive-tertiary-disabled: var(--color-neutral-35);
   --interactive-tertiary-text: var(--color-neutral-98);
   --interactive-accent-active: var(--color-pink-70);
   --interactive-accent-hover: var(--color-pink-80);
@@ -301,7 +301,6 @@
 :root {
   --bg: var(--background-base);
   --text: var(--text-primary);
-  --text-muted: var(--text-muted);
   --accent: var(--interactive-accent-active);
   --action: var(--interactive-primary-active);
   --alert: var(--status-success-main);

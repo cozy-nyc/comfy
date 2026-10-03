@@ -64,7 +64,7 @@ function interactives(mode) {
   return {
     primary: { active: c(R.primary, 50), hover: c(R.primary, 60), inactive: c(R.primary, light ? 95 : 20), disabled: c(n, light ? 80 : 30), text: c(n, 99) },
     secondary: { active: c(R.secondary, light ? 40 : 60), hover: c(R.secondary, light ? 50 : 70), inactive: c(R.secondary, light ? 95 : 20), disabled: c(n, light ? 80 : 30), text: c(n, 99) },
-    tertiary: { active: c(n, light ? 30 : 80), hover: c(n, light ? 95 : 25), inactive: c(n, light ? 90 : 20), disabled: c(n, light ? 80 : 30), text: c(n, light ? 10 : 98) },
+    tertiary: { active: c(n, light ? 30 : 80), hover: c(n, light ? 95 : 35), inactive: c(n, light ? 90 : 30), disabled: c(n, light ? 80 : 35), text: c(n, light ? 10 : 98) },
     accent: { active: c(R.accent, light ? 70 : 70), hover: c(R.accent, light ? 60 : 80), inactive: c(R.accent, light ? 95 : 20), disabled: c(n, light ? 80 : 30), text: c(n, light ? 10 : 10) },
   };
 }
@@ -73,9 +73,10 @@ function semantic(mode) {
   const n = "neutral";
   return {
     $description: `Generated ${mode}-mode roles. Values reference primitives.json.`,
-    background: { base: c(n, light ? 98 : 10), layer1: c(n, light ? 99 : 15), layer2: c(n, light ? 95 : 20), layer3: c(n, light ? 90 : 25) },
+    // Dark mode sits on the softer "cozy black" rather than near-black; layers step lighter from there.
+    background: { base: c(n, light ? 98 : 20), layer1: c(n, light ? 99 : 25), layer2: c(n, light ? 95 : 30), layer3: c(n, light ? 90 : 35) },
     text: { primary: c(n, light ? 10 : 98), secondary: c(n, light ? 35 : 80), muted: c(n, light ? 50 : 60), inverse: c(n, light ? 99 : 10), link: c(R.primary, light ? 50 : 70), accent: c(R.accent, light ? 50 : 70) },
-    border: { subtle: c(n, light ? 90 : 25), strong: c(n, light ? 70 : 40), focus: c(R.accent, light ? 60 : 70) },
+    border: { subtle: c(n, light ? 90 : 30), strong: c(n, light ? 70 : 50), focus: c(R.accent, light ? 60 : 70) },
     status: statuses(mode),
     interactive: interactives(mode),
   };
@@ -156,7 +157,6 @@ ${typeClasses.join("\n")}
 :root {
   --bg: var(--background-base);
   --text: var(--text-primary);
-  --text-muted: var(--text-muted);
   --accent: var(--interactive-accent-active);
   --action: var(--interactive-primary-active);
   --alert: var(--status-success-main);
