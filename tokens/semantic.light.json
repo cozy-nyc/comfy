@@ -1,0 +1,78 @@
+{
+  "$description": "Generated light-mode roles. Values reference primitives.json.",
+  "background": {
+    "base": "{color.neutral.98}",
+    "layer1": "{color.neutral.99}",
+    "layer2": "{color.neutral.95}",
+    "layer3": "{color.neutral.90}"
+  },
+  "text": {
+    "primary": "{color.neutral.10}",
+    "secondary": "{color.neutral.35}",
+    "muted": "{color.neutral.50}",
+    "inverse": "{color.neutral.99}",
+    "link": "{color.hot.50}",
+    "accent": "{color.pink.50}"
+  },
+  "border": {
+    "subtle": "{color.neutral.90}",
+    "strong": "{color.neutral.70}",
+    "focus": "{color.pink.60}"
+  },
+  "status": {
+    "success": {
+      "main": "{color.ice.80}",
+      "light": "{color.ice.95}",
+      "foreground": "{color.ice.10}",
+      "dark": "{color.ice.30}"
+    },
+    "failure": {
+      "main": "{color.hot.50}",
+      "light": "{color.hot.95}",
+      "foreground": "{color.hot.10}",
+      "dark": "{color.hot.30}"
+    },
+    "warning": {
+      "main": "{color.peach.80}",
+      "light": "{color.peach.95}",
+      "foreground": "{color.peach.10}",
+      "dark": "{color.peach.30}"
+    },
+    "info": {
+      "main": "{color.blue.50}",
+      "light": "{color.blue.95}",
+      "foreground": "{color.blue.10}",
+      "dark": "{color.blue.30}"
+    }
+  },
+  "interactive": {
+    "primary": {
+      "active": "{color.hot.50}",
+      "hover": "{color.hot.60}",
+      "inactive": "{color.hot.95}",
+      "disabled": "{color.neutral.80}",
+      "text": "{color.neutral.99}"
+    },
+    "secondary": {
+      "active": "{color.blue.40}",
+      "hover": "{color.blue.50}",
+      "inactive": "{color.blue.95}",
+      "disabled": "{color.neutral.80}",
+      "text": "{color.neutral.99}"
+    },
+    "tertiary": {
+      "active": "{color.neutral.30}",
+      "hover": "{color.neutral.95}",
+      "inactive": "{color.neutral.90}",
+      "disabled": "{color.neutral.80}",
+      "text": "{color.neutral.10}"
+    },
+    "accent": {
+      "active": "{color.pink.70}",
+      "hover": "{color.pink.60}",
+      "inactive": "{color.pink.95}",
+      "disabled": "{color.neutral.80}",
+      "text": "{color.neutral.10}"
+    }
+  }
+}

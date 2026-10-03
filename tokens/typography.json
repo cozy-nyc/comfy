@@ -1,0 +1,26 @@
+{
+  "$description": "Type scale, after the Caldera structure: Display (marketing), Headers (h1–h3), Labels (UI), Body (paragraphs, regular + bold), Data (numbers, mono). Sizes in rem; lineHeight is a multiplier; letterSpacing in em.",
+  "display": {
+    "font": "display", "weight": 800, "transform": "lowercase", "lineHeight": 1,
+    "sizes": { "lg": 8, "base": 4, "sm": 2, "xs": 1.5 },
+    "mobile": { "base": 3 }
+  },
+  "header": {
+    "font": "heading", "weight": 800, "lineHeight": 1.2,
+    "sizes": { "1": 2, "2": 1.5, "3": 1 },
+    "letterSpacing": -0.01
+  },
+  "label": {
+    "font": "heading", "weight": 700, "lineHeight": 1,
+    "sizes": { "xl": 1.5, "lg": 1.25, "base": 1, "sm": 0.75, "xs": 0.625 },
+    "letterSpacing": -0.01
+  },
+  "body": {
+    "font": "body", "weight": 400, "boldWeight": 700, "lineHeight": 1.4,
+    "sizes": { "xl": 1.5, "lg": 1.25, "base": 1, "sm": 0.875, "xs": 0.75 }
+  },
+  "data": {
+    "font": "data", "weight": 400, "boldWeight": 700, "lineHeight": 1,
+    "sizes": { "xl": 1.5, "lg": 1.25, "base": 1, "sm": 0.875, "xs": 0.75 }
+  }
+}

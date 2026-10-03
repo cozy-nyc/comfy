@@ -9,16 +9,18 @@
     "./tokens": "./tokens/index.ts",
     "./tokens/*": "./tokens/*",
     "./assets/*": "./assets/*",
-    "./map": "./map/style.ts"
+    "./map": "./map/style.ts",
+    "./docs/*": "./docs/*"
   },
   "scripts": {
+    "build": "node scripts/build.mjs",
     "typecheck": "tsc --noEmit",
-    "test": "echo 'no tests'",
-    "build": "tsc --noEmit"
+    "test": "node scripts/build.mjs && git diff --exit-code -- tokens css || (echo \"generated files are stale: run pnpm build\" && exit 1)"
   },
   "devDependencies": {
-    "typescript": "^5.7.0",
-    "@types/geojson": "^7946.0.16"
+    "@types/geojson": "^7946.0.16",
+    "culori": "^4.0.2",
+    "typescript": "^5.7.0"
   },
   "license": "MIT",
   "repository": {
@@ -30,7 +32,9 @@
     "css",
     "map",
     "tokens",
+    "scripts",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "docs"
   ]
 }
