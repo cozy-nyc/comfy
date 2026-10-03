@@ -91,7 +91,12 @@ const tokens = {
   light: semLight,
   dark: semDark,
   typography: type,
-  palette: Object.fromEntries(Object.entries(seeds.palette).filter(([k]) => !k.startsWith("$"))),
+  palette: Object.fromEntries(Object.entries(seeds.palette).filter(([k]) => !k.startsWith("$")).map(([k, v]) => [k, v.hex])),
+  figma: {
+    ...seeds.figma,
+    variables: Object.fromEntries(Object.entries(seeds.palette).filter(([k]) => !k.startsWith("$")).map(([k, v]) => [v.figma, `palette.${k}`])),
+    textStyles: Object.fromEntries(Object.entries(type).filter(([k]) => !k.startsWith("$")).flatMap(([g, v]) => Object.entries(v.figma ?? {}).map(([size, name]) => [name, `typography.${g}.${size}`]))),
+  },
   color: { map: seeds.map },
 };
 
@@ -117,7 +122,7 @@ for (const [k, v] of Object.entries(primitives.spacing)) vars.push(`  --space-${
 for (const [k, v] of Object.entries(primitives.radius)) vars.push(`  --radius-${k}: ${v};`);
 for (const [k, v] of Object.entries(primitives.shadow)) vars.push(`  --shadow-${k}: ${v};`);
 for (const [k, v] of Object.entries(primitives.blur)) vars.push(`  --blur-${k}: ${v};`);
-for (const [k, v] of Object.entries(tokens.palette)) vars.push(`  --cozy-${k}: ${v};`);
+for (const [k, v] of Object.entries(tokens.palette)) vars.push(`  --cozy-${k}: ${v}; /* figma: ${seeds.palette[k].figma} */`);
 
 const typeClasses = [];
 const fontVar = (f) => `var(--font-${f})`;
@@ -126,8 +131,11 @@ for (const [group, g] of Object.entries(type)) {
   const ls = g.letterSpacing ? ` letter-spacing: ${g.letterSpacing}em;` : "";
   const tt = g.transform ? ` text-transform: ${g.transform};` : "";
   for (const [size, rem] of Object.entries(g.sizes)) {
-    typeClasses.push(`.cozy-${group}-${size} { font: ${g.weight} ${rem}rem/${g.lineHeight} ${fontVar(g.font)};${ls}${tt} }`);
-    if (g.boldWeight) typeClasses.push(`.cozy-${group}-bold-${size} { font: ${g.boldWeight} ${rem}rem/${g.lineHeight} ${fontVar(g.font)};${ls}${tt} }`);
+    const fig = (k) => (g.figma?.[k] ? ` /* figma: ${g.figma[k]} */` : "");
+    typeClasses.push(`.cozy-${group}-${size} { font: ${g.weight} ${rem}rem/${g.lineHeight} ${fontVar(g.font)};${ls}${tt} }${fig(size)}`);
+    if (g.boldWeight) typeClasses.push(`.cozy-${group}-bold-${size} { font: ${g.boldWeight} ${rem}rem/${g.lineHeight} ${fontVar(g.font)};${ls}${tt} }${fig(`bold-${size}`)}`);
+    if (g.altWeight && (size === "base" || g.figma?.[`alt-${size}`]))
+      typeClasses.push(`.cozy-${group}-alt-${size} { font: ${g.altWeight} ${rem}rem/${g.lineHeight} ${fontVar(g.altFont?.[size] ?? g.font)};${ls}${tt} }${fig(size === "base" ? "alt" : `alt-${size}`)}`);
   }
   for (const [size, rem] of Object.entries(g.mobile ?? {}))
     typeClasses.push(`@media (max-width: ${seeds.breakpoints.md - 1}px) { .cozy-${group}-${size} { font-size: ${rem}rem; } }`);

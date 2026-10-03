@@ -146,16 +146,16 @@
   --blur-sm: 4px;
   --blur-base: 12px;
   --blur-lg: 32px;
-  --cozy-white: #FFFDFA;
-  --cozy-grey: #C4C4C4;
-  --cozy-smoke: #696D73;
-  --cozy-black: #494949;
-  --cozy-pink: #F792BE;
-  --cozy-peach: #FFB9A6;
-  --cozy-hot: #D92D6B;
-  --cozy-blue: #58A2C1;
-  --cozy-deep: #2B6484;
-  --cozy-ice: #76E3DD;
+  --cozy-white: #FFFDFA; /* figma: cozy white */
+  --cozy-grey: #C4C4C4; /* figma: cozy grey */
+  --cozy-smoke: #696D73; /* figma: cozy smoke */
+  --cozy-black: #494949; /* figma: cozy black */
+  --cozy-pink: #F792BE; /* figma: cozy pink */
+  --cozy-peach: #FFB9A6; /* figma: cozy peach */
+  --cozy-hot: #D92D6B; /* figma: cozy hot */
+  --cozy-blue: #58A2C1; /* figma: cozy blue */
+  --cozy-deep: #2B6484; /* figma: cozy deep */
+  --cozy-ice: #76E3DD; /* figma: cozy ice */
 }
 
 :root, [data-theme="dark"] {
@@ -263,29 +263,33 @@
 }
 
 /* Type scale */
-.cozy-display-lg { font: 800 8rem/1 var(--font-display); text-transform: lowercase; }
-.cozy-display-base { font: 800 4rem/1 var(--font-display); text-transform: lowercase; }
-.cozy-display-sm { font: 800 2rem/1 var(--font-display); text-transform: lowercase; }
-.cozy-display-xs { font: 800 1.5rem/1 var(--font-display); text-transform: lowercase; }
-@media (max-width: 799px) { .cozy-display-base { font-size: 3rem; } }
-.cozy-header-1 { font: 800 2rem/1.2 var(--font-heading); letter-spacing: -0.01em; }
-.cozy-header-2 { font: 800 1.5rem/1.2 var(--font-heading); letter-spacing: -0.01em; }
-.cozy-header-3 { font: 800 1rem/1.2 var(--font-heading); letter-spacing: -0.01em; }
+.cozy-display-base { font: 800 8rem/0.82 var(--font-display); text-transform: lowercase; } /* figma: display */
+@media (max-width: 799px) { .cozy-display-base { font-size: 4rem; } }
+.cozy-subheading-base { font: 600 2rem/1 var(--font-display); text-transform: lowercase; } /* figma: subheading */
+.cozy-subheading-alt-base { font: 200 2rem/1 var(--font-display); text-transform: lowercase; } /* figma: subheading - alt */
+.cozy-header-1 { font: 800 4rem/1 var(--font-heading); } /* figma: heading 1 */
+.cozy-header-alt-1 { font: 300 4rem/1 var(--font-body); } /* figma: heading 1 - alt */
+.cozy-header-2 { font: 800 2.5rem/1 var(--font-heading); } /* figma: heading 2 */
+.cozy-header-alt-2 { font: 300 2.5rem/1 var(--font-heading); } /* figma: headings 2 - alt */
+.cozy-header-3 { font: 800 2rem/1 var(--font-heading); } /* figma: heading 3 */
+.cozy-header-alt-3 { font: 300 2rem/1 var(--font-heading); } /* figma: heading 3 - alt */
+.cozy-header-4 { font: 800 1.25rem/1 var(--font-heading); } /* figma: heading 4 */
+.cozy-header-5 { font: 800 1rem/1 var(--font-heading); } /* figma: heading 5 */
+.cozy-body-xl { font: 400 1.5rem/1.4 var(--font-body); }
+.cozy-body-bold-xl { font: 700 1.5rem/1.4 var(--font-body); }
+.cozy-body-lg { font: 400 1.25rem/1.4 var(--font-body); }
+.cozy-body-bold-lg { font: 700 1.25rem/1.4 var(--font-body); }
+.cozy-body-base { font: 400 1rem/1.4 var(--font-body); } /* figma: body text */
+.cozy-body-bold-base { font: 700 1rem/1.4 var(--font-body); } /* figma: body text - bold */
+.cozy-body-sm { font: 400 0.875rem/1.4 var(--font-body); }
+.cozy-body-bold-sm { font: 700 0.875rem/1.4 var(--font-body); }
+.cozy-body-xs { font: 400 0.75rem/1.4 var(--font-body); }
+.cozy-body-bold-xs { font: 700 0.75rem/1.4 var(--font-body); }
 .cozy-label-xl { font: 700 1.5rem/1 var(--font-heading); letter-spacing: -0.01em; }
 .cozy-label-lg { font: 700 1.25rem/1 var(--font-heading); letter-spacing: -0.01em; }
 .cozy-label-base { font: 700 1rem/1 var(--font-heading); letter-spacing: -0.01em; }
 .cozy-label-sm { font: 700 0.75rem/1 var(--font-heading); letter-spacing: -0.01em; }
 .cozy-label-xs { font: 700 0.625rem/1 var(--font-heading); letter-spacing: -0.01em; }
-.cozy-body-xl { font: 400 1.5rem/1.4 var(--font-body); }
-.cozy-body-bold-xl { font: 700 1.5rem/1.4 var(--font-body); }
-.cozy-body-lg { font: 400 1.25rem/1.4 var(--font-body); }
-.cozy-body-bold-lg { font: 700 1.25rem/1.4 var(--font-body); }
-.cozy-body-base { font: 400 1rem/1.4 var(--font-body); }
-.cozy-body-bold-base { font: 700 1rem/1.4 var(--font-body); }
-.cozy-body-sm { font: 400 0.875rem/1.4 var(--font-body); }
-.cozy-body-bold-sm { font: 700 0.875rem/1.4 var(--font-body); }
-.cozy-body-xs { font: 400 0.75rem/1.4 var(--font-body); }
-.cozy-body-bold-xs { font: 700 0.75rem/1.4 var(--font-body); }
 .cozy-data-xl { font: 400 1.5rem/1 var(--font-data); }
 .cozy-data-bold-xl { font: 700 1.5rem/1 var(--font-data); }
 .cozy-data-lg { font: 400 1.25rem/1 var(--font-data); }

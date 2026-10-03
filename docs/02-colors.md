@@ -2,9 +2,28 @@
 
 Two layers, like most systems: **primitives** (ramps you never use directly in UI) and **semantic roles** (what you actually use). Both are generated from `tokens/seeds.json` by `scripts/build.mjs`.
 
+## The Figma variables
+
+The ten color variables in the Figma file are the base of everything and are kept verbatim (`seeds.palette`, `--cozy-*`, and the `palette` export). `tokens.json` → `figma.variables` maps each Figma name to its token.
+
+| Figma variable | Hex | CSS |
+|---|---|---|
+| cozy white | `#FFFDFA` | `--cozy-white` |
+| cozy grey | `#C4C4C4` | `--cozy-grey` |
+| cozy smoke | `#696D73` | `--cozy-smoke` |
+| cozy black | `#494949` | `--cozy-black` |
+| cozy pink | `#F792BE` | `--cozy-pink` |
+| cozy peach | `#FFB9A6` | `--cozy-peach` |
+| cozy hot | `#D92D6B` | `--cozy-hot` |
+| cozy blue | `#58A2C1` | `--cozy-blue` |
+| cozy deep | `#2B6484` | `--cozy-deep` |
+| cozy ice | `#76E3DD` | `--cozy-ice` |
+
+Everything below is derived from these. When a variable changes in Figma, change it in `seeds.palette` and the matching `seeds.hues` entry, then `pnpm build`.
+
 ## Primitives: ramps
 
-Seven hues from the Figma guide, each expanded into 16 steps: `5 10 15 20 25 30 35 40 50 60 70 80 90 95 98 99`. Higher is lighter. The base color keeps its hue and chroma; chroma tapers toward the dark and light ends.
+Seven ramps seeded from the Figma variables (pink, hot, peach, blue, deep, ice, and a warm neutral from cozy black), each expanded into 16 steps: `5 10 15 20 25 30 35 40 50 60 70 80 90 95 98 99`. Higher is lighter. The base color keeps its hue and chroma; chroma tapers toward the dark and light ends.
 
 | Ramp | Base | CSS |
 |---|---|---|

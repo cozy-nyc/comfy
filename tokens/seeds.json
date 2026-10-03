@@ -1,36 +1,43 @@
 {
-  "$description": "Hand-picked inputs. scripts/build.mjs turns these into primitives.json, semantic.*.json and css/cozy.css. Edit here (and in Figma), never the generated files.",
+  "$description": "Hand-picked inputs, mirroring the Figma variables and styles in the 'cozy design system' file (8pN42b4cUOYKJnqcZ8D41o). Each entry's `figma` field is the variable/style name there. scripts/build.mjs turns these into primitives.json, semantic.*.json, tokens.json and css/cozy.css. Edit here (and in Figma), never the generated files.",
   "hues": {
     "$description": "Base colors from the cozy Figma guide. Each becomes a ramp with steps 5..99 (higher = lighter), keeping the base hue and chroma. Optional chroma/hue override the base.",
     "pink": {
       "hex": "#F792BE",
-      "label": "cozy pink"
+      "label": "cozy pink",
+      "figma": "cozy pink (seed; the ramp is generated)"
     },
     "hot": {
       "hex": "#D92D6B",
-      "label": "cozy hot"
+      "label": "cozy hot",
+      "figma": "cozy hot (seed; the ramp is generated)"
     },
     "peach": {
       "hex": "#FFB9A6",
-      "label": "cozy peach"
+      "label": "cozy peach",
+      "figma": "cozy peach (seed; the ramp is generated)"
     },
     "blue": {
       "hex": "#58A2C1",
-      "label": "cozy blue"
+      "label": "cozy blue",
+      "figma": "cozy blue (seed; the ramp is generated)"
     },
     "deep": {
       "hex": "#2B6484",
-      "label": "cozy deep"
+      "label": "cozy deep",
+      "figma": "cozy deep (seed; the ramp is generated)"
     },
     "ice": {
       "hex": "#76E3DD",
-      "label": "cozy ice"
+      "label": "cozy ice",
+      "figma": "cozy ice (seed; the ramp is generated)"
     },
     "neutral": {
       "hex": "#494949",
       "chroma": 0.006,
       "hue": 60,
-      "label": "cozy black, warmed slightly so the ramp runs toward cozy white #FFFDFA"
+      "label": "cozy black, warmed slightly so the ramp runs toward cozy white #FFFDFA",
+      "figma": "cozy black (seed; the ramp is generated)"
     }
   },
   "ramp": {
@@ -139,17 +146,47 @@
     "lg": 32
   },
   "palette": {
-    "$description": "The original named colors from the Figma guide. Kept verbatim as --cozy-* and the palette export.",
-    "white": "#FFFDFA",
-    "grey": "#C4C4C4",
-    "smoke": "#696D73",
-    "black": "#494949",
-    "pink": "#F792BE",
-    "peach": "#FFB9A6",
-    "hot": "#D92D6B",
-    "blue": "#58A2C1",
-    "deep": "#2B6484",
-    "ice": "#76E3DD"
+    "$description": "The Figma color variables, verbatim. Exposed as --cozy-* and the palette export.",
+    "white": {
+      "hex": "#FFFDFA",
+      "figma": "cozy white"
+    },
+    "grey": {
+      "hex": "#C4C4C4",
+      "figma": "cozy grey"
+    },
+    "smoke": {
+      "hex": "#696D73",
+      "figma": "cozy smoke"
+    },
+    "black": {
+      "hex": "#494949",
+      "figma": "cozy black"
+    },
+    "pink": {
+      "hex": "#F792BE",
+      "figma": "cozy pink"
+    },
+    "peach": {
+      "hex": "#FFB9A6",
+      "figma": "cozy peach"
+    },
+    "hot": {
+      "hex": "#D92D6B",
+      "figma": "cozy hot"
+    },
+    "blue": {
+      "hex": "#58A2C1",
+      "figma": "cozy blue"
+    },
+    "deep": {
+      "hex": "#2B6484",
+      "figma": "cozy deep"
+    },
+    "ice": {
+      "hex": "#76E3DD",
+      "figma": "cozy ice"
+    }
   },
   "map": {
     "$description": "Subway-map style colors used by map/style.ts: flat NYC after the MTA/Vignelli diagram.",
@@ -176,5 +213,10 @@
       "$value": "#FFFFFF",
       "$description": "station dots"
     }
+  },
+  "figma": {
+    "file": "8pN42b4cUOYKJnqcZ8D41o",
+    "url": "https://www.figma.com/design/8pN42b4cUOYKJnqcZ8D41o/cozy-design-system",
+    "page": "Design Guide"
   }
 }

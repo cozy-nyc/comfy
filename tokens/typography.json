@@ -1,26 +1,107 @@
 {
-  "$description": "Type scale, after the Caldera structure: Display (marketing), Headers (h1–h3), Labels (UI), Body (paragraphs, regular + bold), Data (numbers, mono). Sizes in rem; lineHeight is a multiplier; letterSpacing in em.",
+  "$description": "Type scale. Entries with `figma` are the text styles in the Figma file, verbatim (px \u2192 rem at 16px). Entries marked proposed are not in Figma yet. Sizes in rem; lineHeight is a multiplier; letterSpacing in em.",
   "display": {
-    "font": "display", "weight": 800, "transform": "lowercase", "lineHeight": 1,
-    "sizes": { "lg": 8, "base": 4, "sm": 2, "xs": 1.5 },
-    "mobile": { "base": 3 }
+    "font": "display",
+    "weight": 800,
+    "transform": "lowercase",
+    "lineHeight": 0.82,
+    "sizes": {
+      "base": 8
+    },
+    "figma": {
+      "base": "display"
+    },
+    "mobile": {
+      "base": 4
+    },
+    "$note": "Figma: Dosis ExtraBold 128px, line-height 105px (0.82)."
+  },
+  "subheading": {
+    "font": "display",
+    "weight": 600,
+    "altWeight": 200,
+    "transform": "lowercase",
+    "lineHeight": 1,
+    "sizes": {
+      "base": 2
+    },
+    "figma": {
+      "base": "subheading",
+      "alt": "subheading - alt"
+    },
+    "$note": "Figma: Dosis SemiBold 32px; alt is Dosis ExtraLight 32px."
   },
   "header": {
-    "font": "heading", "weight": 800, "lineHeight": 1.2,
-    "sizes": { "1": 2, "2": 1.5, "3": 1 },
-    "letterSpacing": -0.01
-  },
-  "label": {
-    "font": "heading", "weight": 700, "lineHeight": 1,
-    "sizes": { "xl": 1.5, "lg": 1.25, "base": 1, "sm": 0.75, "xs": 0.625 },
-    "letterSpacing": -0.01
+    "font": "heading",
+    "weight": 800,
+    "altWeight": 300,
+    "lineHeight": 1,
+    "sizes": {
+      "1": 4,
+      "2": 2.5,
+      "3": 2,
+      "4": 1.25,
+      "5": 1
+    },
+    "figma": {
+      "1": "heading 1",
+      "2": "heading 2",
+      "3": "heading 3",
+      "4": "heading 4",
+      "5": "heading 5",
+      "alt-1": "heading 1 - alt",
+      "alt-2": "headings 2 - alt",
+      "alt-3": "heading 3 - alt"
+    },
+    "altFont": {
+      "1": "body"
+    },
+    "$note": "Figma: Montserrat Alternates ExtraBold 64/40/32/20/16px. Alts are Light 300 (heading 1 - alt is Open Sans Light). Figma names: Page Title, Supportive Tagline, Section Heading, Paragraph Heading, Block Heading, Small Important Heading."
   },
   "body": {
-    "font": "body", "weight": 400, "boldWeight": 700, "lineHeight": 1.4,
-    "sizes": { "xl": 1.5, "lg": 1.25, "base": 1, "sm": 0.875, "xs": 0.75 }
+    "font": "body",
+    "weight": 400,
+    "boldWeight": 700,
+    "lineHeight": 1.4,
+    "sizes": {
+      "xl": 1.5,
+      "lg": 1.25,
+      "base": 1,
+      "sm": 0.875,
+      "xs": 0.75
+    },
+    "figma": {
+      "base": "body text",
+      "bold-base": "body text - bold"
+    },
+    "$note": "Figma defines only 16px regular/bold (line-height 100%). xl/lg/sm/xs and the 1.4 line-height are proposed."
+  },
+  "label": {
+    "font": "heading",
+    "weight": 700,
+    "lineHeight": 1,
+    "letterSpacing": -0.01,
+    "sizes": {
+      "xl": 1.5,
+      "lg": 1.25,
+      "base": 1,
+      "sm": 0.75,
+      "xs": 0.625
+    },
+    "$note": "Proposed (Caldera-style UI labels). Not in Figma yet."
   },
   "data": {
-    "font": "data", "weight": 400, "boldWeight": 700, "lineHeight": 1,
-    "sizes": { "xl": 1.5, "lg": 1.25, "base": 1, "sm": 0.875, "xs": 0.75 }
+    "font": "data",
+    "weight": 400,
+    "boldWeight": 700,
+    "lineHeight": 1,
+    "sizes": {
+      "xl": 1.5,
+      "lg": 1.25,
+      "base": 1,
+      "sm": 0.875,
+      "xs": 0.75
+    },
+    "$note": "Proposed (Space Mono for numbers). Not in Figma yet."
   }
 }
