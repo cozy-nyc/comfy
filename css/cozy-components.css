@@ -1,0 +1,346 @@
+/* cozy components — a starter UI layer over the tokens in cozy.css.
+ *
+ * HAND-WRITTEN, unlike css/cozy.css: scripts/build.mjs does not touch this file.
+ * These components are not in the Figma file yet, so treat them as a proposal:
+ * every value here is a token reference, so re-seeding the system restyles them.
+ *
+ * Requires css/cozy.css to be loaded first.
+ */
+
+/* ---------------------------------------------------------------- Button */
+
+.cozy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font: 700 1rem/1 var(--font-heading);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.cozy-btn:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.cozy-btn--sm {
+  padding: var(--space-0_5) var(--space-2);
+  font-size: 0.75rem;
+}
+
+.cozy-btn--lg {
+  padding: var(--space-2) var(--space-4);
+  font-size: 1.25rem;
+}
+
+.cozy-btn--block {
+  display: flex;
+  width: 100%;
+}
+
+/* Solid variants: one rule per interactive role. */
+.cozy-btn--primary {
+  background: var(--interactive-primary-active);
+  color: var(--interactive-primary-text);
+}
+.cozy-btn--primary:hover:not(:disabled) {
+  background: var(--interactive-primary-hover);
+}
+
+.cozy-btn--secondary {
+  background: var(--interactive-secondary-active);
+  color: var(--interactive-secondary-text);
+}
+.cozy-btn--secondary:hover:not(:disabled) {
+  background: var(--interactive-secondary-hover);
+}
+
+/* Pairs `inactive` (not `active`) with `text`: tertiary's active/text pair has
+ * almost no contrast in either theme. See docs/08-components.md. */
+.cozy-btn--tertiary {
+  background: var(--interactive-tertiary-inactive);
+  color: var(--interactive-tertiary-text);
+}
+.cozy-btn--tertiary:hover:not(:disabled) {
+  background: var(--interactive-tertiary-hover);
+}
+
+.cozy-btn--accent {
+  background: var(--interactive-accent-active);
+  color: var(--interactive-accent-text);
+}
+.cozy-btn--accent:hover:not(:disabled) {
+  background: var(--interactive-accent-hover);
+}
+
+/* Ghost: no surface at rest, picks up the tertiary wash on hover. */
+.cozy-btn--quiet {
+  background: transparent;
+  color: var(--text-primary);
+}
+.cozy-btn--quiet:hover:not(:disabled) {
+  background: var(--interactive-tertiary-hover);
+}
+
+.cozy-btn--outline {
+  background: transparent;
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+.cozy-btn--outline:hover:not(:disabled) {
+  border-color: var(--border-focus);
+  color: var(--text-accent);
+}
+
+.cozy-btn:disabled,
+.cozy-btn[aria-disabled="true"] {
+  background: var(--interactive-primary-disabled);
+  border-color: transparent;
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.cozy-btn--outline:disabled {
+  background: transparent;
+  border-color: var(--border-subtle);
+}
+
+/* ------------------------------------------------------------------ Card */
+
+.cozy-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  background: var(--background-layer1);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-base);
+}
+
+.cozy-card--raised {
+  box-shadow: var(--shadow-base);
+}
+
+.cozy-card--flush {
+  padding: 0;
+  overflow: hidden;
+}
+
+.cozy-card__media {
+  aspect-ratio: 16 / 9;
+  background: var(--background-layer3);
+}
+
+.cozy-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+}
+
+.cozy-card__title {
+  margin: 0;
+  font: 800 1.25rem/1 var(--font-heading);
+}
+
+.cozy-card__text {
+  margin: 0;
+  font: 400 1rem/1.4 var(--font-body);
+  color: var(--text-secondary);
+}
+
+.cozy-card__footer {
+  display: flex;
+  gap: var(--space-1);
+  align-items: center;
+  margin-top: var(--space-1);
+}
+
+/* ----------------------------------------------------------------- Input */
+
+.cozy-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0_5);
+}
+
+.cozy-field__label {
+  font: 700 0.75rem/1 var(--font-heading);
+  letter-spacing: -0.01em;
+  color: var(--text-secondary);
+}
+
+.cozy-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--space-1) var(--space-2);
+  background: var(--background-layer2);
+  /* border-strong, not subtle: in dark, --border-subtle is the same neutral-30
+   * as --background-layer2, which makes the field edge disappear. */
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xs);
+  font: 400 1rem/1.4 var(--font-body);
+  color: var(--text-primary);
+}
+
+.cozy-input::placeholder {
+  color: var(--text-muted);
+}
+
+.cozy-input:hover:not(:disabled) {
+  border-color: var(--text-muted);
+}
+
+.cozy-input:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px var(--interactive-accent-inactive);
+}
+
+.cozy-input:disabled {
+  background: var(--background-layer3);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.cozy-input[aria-invalid="true"] {
+  border-color: var(--status-failure-main);
+}
+
+.cozy-field__hint {
+  font: 400 0.75rem/1.4 var(--font-body);
+  color: var(--text-muted);
+}
+
+.cozy-field__error {
+  font: 400 0.75rem/1.4 var(--font-body);
+  color: var(--status-failure-main);
+}
+
+textarea.cozy-input {
+  min-height: calc(var(--space-12) + var(--space-2));
+  resize: vertical;
+}
+
+select.cozy-input {
+  appearance: none;
+  padding-right: var(--space-4);
+}
+
+/* ----------------------------------------------------------------- Badge */
+
+/* Badge: a status read-out. Colour carries meaning, so each status role
+ * pairs its `light` surface with its `dark` text for contrast in both themes. */
+.cozy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-0_5);
+  padding: var(--space-0_25) var(--space-1);
+  border-radius: var(--radius-full);
+  font: 700 0.625rem/1 var(--font-heading);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.cozy-badge--success {
+  background: var(--status-success-light);
+  color: var(--status-success-dark);
+}
+.cozy-badge--failure {
+  background: var(--status-failure-light);
+  color: var(--status-failure-dark);
+}
+.cozy-badge--warning {
+  background: var(--status-warning-light);
+  color: var(--status-warning-dark);
+}
+.cozy-badge--info {
+  background: var(--status-info-light);
+  color: var(--status-info-dark);
+}
+
+.cozy-badge--solid.cozy-badge--success {
+  background: var(--status-success-main);
+  color: var(--status-success-foreground);
+}
+.cozy-badge--solid.cozy-badge--failure {
+  background: var(--status-failure-main);
+  color: var(--status-failure-foreground);
+}
+.cozy-badge--solid.cozy-badge--warning {
+  background: var(--status-warning-main);
+  color: var(--status-warning-foreground);
+}
+.cozy-badge--solid.cozy-badge--info {
+  background: var(--status-info-main);
+  color: var(--status-info-foreground);
+}
+
+.cozy-badge--dot::before {
+  content: "";
+  width: var(--space-0_5);
+  height: var(--space-0_5);
+  border-radius: var(--radius-full);
+  background: currentColor;
+}
+
+/* ------------------------------------------------------------------- Tag */
+
+/* Tag: a neutral, selectable label — filters and categories, not status. */
+.cozy-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-0_5);
+  padding: var(--space-0_5) var(--space-2);
+  background: var(--background-layer2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  font: 400 0.875rem/1.4 var(--font-body);
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.cozy-tag:hover {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+.cozy-tag:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.cozy-tag[aria-pressed="true"] {
+  background: var(--interactive-accent-inactive);
+  border-color: var(--interactive-accent-active);
+  /* text-primary, not --interactive-accent-text: that token is neutral-10 in both
+   * themes, which goes dark-on-dark over the dark accent wash (pink-20). */
+  color: var(--text-primary);
+}
+
+.cozy-tag--static {
+  cursor: default;
+}
+
+.cozy-tag__remove {
+  display: inline-flex;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.cozy-tag__remove:hover {
+  opacity: 1;
+}
