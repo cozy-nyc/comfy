@@ -14,7 +14,7 @@ The cozy design system, as code. Tokens, a CSS theme, a map style and the cube l
 
 **Source of truth is Figma:** [cozy design system](https://www.figma.com/design/8pN42b4cUOYKJnqcZ8D41o/cozy-design-system) · [team folder](https://www.figma.com/files/team/1392311666896102790/folder/46243737). Change it there first, then here.
 
-cozy started as a college project; this is that style grown up. It's used by the [cozy NYC map](https://github.com/cozy-nyc/cozy-nyc) and is MIT-licensed so anyone can use it.
+cozy started as a college project; this is that style grown up. It's used by the [cozy NYC map](https://github.com/cozy-nyc/cozy-nyc) and is licensed under the GNU GPL v3, the same as the map.
 
 ## How it's built
 
@@ -72,4 +72,4 @@ import logo from "@cozy/comfy/assets/logo/cube-pink.svg";
 
 ## License
 
-MIT. The map style draws OpenStreetMap data (ODbL) via OpenFreeMap and MTA open data; those have their own terms.
+[GNU General Public License v3.0](LICENSE). You can use, change and share it, but anything you distribute that includes it has to be released under the GPL v3 too. The map style draws OpenStreetMap data (ODbL) via OpenFreeMap and MTA open data; those have their own terms.
